@@ -1,36 +1,35 @@
 #!/usr/bin/env python3
 
 # Created by: Marshall Demars
-# Created on: Nov 2022
-# This program does addition using loops
+# Created on: NOV 2022
+# This program adds positive number using loops
 
 
 def main():
-    # This program does addition using loops
+    # This program adds positive number using loops
+    loop_counter = 0
+    add_int = 0
 
-    counter = 0
-    total_of_numbers = 0
-
-    # Input, Process and Output
-    added_as_string = input("How many positive whole numbers would you like to add: ")
+    # input,process,output
+    loops_string = input("How many positive integers do you want to add?: ")
+    print("")
 
     try:
-        added_as_int = int(added_as_string)
-
-        for counter in range(added_as_int):
-            input_as_string = input("\nEnter a positive integer to add: ")
-            number_as_int = int(input_as_string)
-            if number_as_int < 0:
-                continue
-            elif number_as_int > 0:
-                total = total + number_as_int
-            else:
-                break
-
-        if number_as_int > 0 or number_as_int < 0:
-            print("\nSum of all positive integers is {0}.".format(total_of_numbers))
-    except Exception:
-        print("\nInvalid input.")
+        loops_integer = int(loops_string)
+        if loops_integer > 0:
+            while loop_counter < loops_integer:
+                loop_counter = loop_counter + 1
+                user_string = input("Enter a number to add: ")
+                user_number = int(user_string)
+                if user_number < 0:
+                    continue
+                add_int = add_int + user_number
+                sum = add_int
+            print("Sum of just the positive numbers is = {0}".format(sum))
+        else:
+            print("That is not a positive integer.")
+    except ValueError:
+        print("That is not a valid input, try again.")
 
     print("\nDone.")
 
