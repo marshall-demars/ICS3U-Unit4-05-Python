@@ -11,25 +11,24 @@ def main():
     add_int = 0
 
     # input,process,output
-    loops_string = input("How many positive integers do you want to add?: ")
-    print("")
+    input_as_string = input("How many positive integers do you want to add?: ")
 
     try:
-        loops_integer = int(loops_string)
-        if loops_integer > 0:
-            while loop_counter < loops_integer:
+        input_as_integer = int(input_as_string)
+        if input_as_integer > 0:
+            while loop_counter < input_as_integer:
                 loop_counter = loop_counter + 1
-                user_string = input("Enter a number to add: ")
-                user_number = int(user_string)
-                if user_number < 0:
+                user_as_string = input("\nEnter a number to add: ")
+                user_as_int = int(user_as_string)
+                if user_as_int < 0:
                     continue
-                add_int = add_int + user_number
+                add_int = add_int + user_as_int
                 sum = add_int
-            print("Sum of just the positive numbers is = {0}".format(sum))
+            print("\nSum of all the positive numbers is = {0}".format(sum))
         else:
-            print("That is not a positive integer.")
+            print("\nPlease input a positive integer.")
     except ValueError:
-        print("That is not a valid input, try again.")
+        print("\nInvalid input, try again.")
 
     print("\nDone.")
 
